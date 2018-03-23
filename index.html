@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onkeyup="keyAction(event)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,35 +18,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="btn" onclick="append(this)">(</div>
-            <div class="btn" onclick="append(this)">)</div>
+            <div class="btn" onclick="append(this)" id="bl">(</div>
+            <div class="btn" onclick="append(this)" id="br">)</div>
             <div class="btn btn-ans" onclick="appendAnswer()">Ans</div>
             <div class="btn btn-clear btn-sm" onclick="allCancel()">AC</div>
             <div class="btn btn-clear btn-sm" onclick="cancelEntry()">CE</div>
         </div>
         <div class="row">
-            <div class="btn" onclick="append(this)">7</div>
-            <div class="btn" onclick="append(this)">8</div>
-            <div class="btn" onclick="append(this)">9</div>
-            <div class="btn" onclick="append(this)">/</div>
+            <div class="btn" onclick="append(this)" id="b7">7</div>
+            <div class="btn" onclick="append(this)" id="b8">8</div>
+            <div class="btn" onclick="append(this)" id="b9">9</div>
+            <div class="btn" onclick="append(this)" id="bd">/</div>
         </div>
         <div class="row">
-            <div class="btn" onclick="append(this)">4</div>
-            <div class="btn" onclick="append(this)">5</div>
-            <div class="btn" onclick="append(this)">6</div>
-            <div class="btn" onclick="append(this)">*</div>
+            <div class="btn" onclick="append(this)" id="b4">4</div>
+            <div class="btn" onclick="append(this)" id="b5">5</div>
+            <div class="btn" onclick="append(this)" id="b6">6</div>
+            <div class="btn" onclick="append(this)" id="bm">*</div>
         </div>
         <div class="row">
-            <div class="btn" onclick="append(this)">1</div>
-            <div class="btn" onclick="append(this)">2</div>
-            <div class="btn" onclick="append(this)">3</div>
-            <div class="btn" onclick="append(this)">-</div>
+            <div class="btn" onclick="append(this)" id="b1">1</div>
+            <div class="btn" onclick="append(this)" id="b2">2</div>
+            <div class="btn" onclick="append(this)" id="b3">3</div>
+            <div class="btn" onclick="append(this)" id="bs">-</div>
         </div>
         <div class="row">
-            <div class="btn" onclick="append(this)">0</div>
-            <div class="btn" onclick="append(this)">.</div>
+            <div class="btn" onclick="append(this)" id="b0">0</div>
+            <div class="btn" onclick="append(this)" id="bp">.</div>
             <div class="btn btn-equal" onclick="getResult()">=</div>
-            <div class="btn" onclick="append(this)">+</div>
+            <div class="btn" onclick="append(this)" id="ba">+</div>
         </div>
     </div>
 </body>
