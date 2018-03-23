@@ -1,33 +1,52 @@
-function ID(id){return document.getElementById(id);}
-function IH(id){return ID(id).innerHTML;}
-function SP(v){ID('pri-screen').innerHTML=v;}
-function SA(v){ID('ans-screen').innerHTML=v;}
+var answer = 0;
 
-function append(e) {
-    var str = IH('pri-screen');
-    var d = e.innerHTML;
-    if (str === '0') {
-        SP(d==='0'?'0':d);
+function ID(id) {
+    return document.getElementById(id);
+}
+
+function append(btn) {
+    var currentData = ID('pri-screen').innerHTML;
+    if (currentData.length===22) {
+        return;
+    }
+    if (currentData==='0') {
+        ID('pri-screen').innerHTML=btn.innerHTML;
     } else {
-        SP(str+d);
+        ID('pri-screen').innerHTML=currentData+btn.innerHTML;
     }
 }
-function result() {
-    var expr = IH('pri-screen');
-    if (expr==='0') {return;}
-    try {
-        SA(eval(expr));
-        SP('0');
-    } catch(e) {
-        alert(e.message);
-        SP('0');
+
+function appendAnswer() {
+    var currentData = ID('pri-screen').innerHTML;
+    if ((currentData+'A').length>=22) {
+        return;
+    }
+    if (currentData==='0') {
+        ID('pri-screen').innerHTML='A';
+    } else {
+        ID('pri-screen').innerHTML=currentData+'A';
     }
 }
-function all_cancel() {
-    SP('0');
+
+function getResult() {
+    var expr = ID('pri-screen').innerHTML;
+    expr = expr.split('A').join(answer.toString());
+    answer = eval(expr);
+    ID('ans-screen').innerHTML = 'Ans = ' + answer;
+    ID('pri-screen').innerHTML = '0';
 }
-function cancel_entry() {
-    var str = IH('pri-screen');
-    str = str.slice(0, -1);
-    SP(str.length?str:'0');
+
+function allCancel() {
+    ID('pri-screen').innerHTML='0';
+    answer = 0;
+    ID('ans-screen').innerHTML = 'Ans = ' + answer;
+}
+
+function cancelEntry() {
+    var currentData = ID('pri-screen').innerHTML;
+    if (currentData.length===1) {
+        ID('pri-screen').innerHTML = '0';
+    } else {
+        ID('pri-screen').innerHTML = currentData.slice(0, -1);
+    }
 }

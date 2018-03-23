@@ -13,16 +13,16 @@
     <div id="calculator">
         <div class="row">
             <div class="screen">
-                <div id="ans-screen"></div>
+                <div id="ans-screen">Ans = 0</div>
                 <div id="pri-screen">0</div>
             </div>
         </div>
         <div class="row">
             <div class="btn" onclick="append(this)">(</div>
             <div class="btn" onclick="append(this)">)</div>
-            <div class="btn btn-ans" onclick="append(this)">Ans</div>
-            <div class="btn btn-clear btn-sm" onclick="all_cancel()">AC</div>
-            <div class="btn btn-clear btn-sm" onclick="cancel_entry()">CE</div>
+            <div class="btn btn-ans" onclick="appendAnswer()">Ans</div>
+            <div class="btn btn-clear btn-sm" onclick="allCancel()">AC</div>
+            <div class="btn btn-clear btn-sm" onclick="cancelEntry()">CE</div>
         </div>
         <div class="row">
             <div class="btn" onclick="append(this)">7</div>
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="btn" onclick="append(this)">0</div>
             <div class="btn" onclick="append(this)">.</div>
-            <div class="btn btn-equal" onclick="result()">=</div>
+            <div class="btn btn-equal" onclick="getResult()">=</div>
             <div class="btn" onclick="append(this)">+</div>
         </div>
     </div>
